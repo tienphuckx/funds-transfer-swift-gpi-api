@@ -25,12 +25,13 @@ public class TransactionController {
         this.swiftGpiService = swiftGpiService;
     }
 
+
     @PostMapping("/send")
     public ResponseEntity<String> processTransaction(@RequestBody UserTransactionRequestDTO requestDTO) {
         UserTransactionRequestFull fullRequest = transactionService.enrichTransaction(requestDTO);
-        String pacs008Xml = swiftGpiService.buildPacs008(fullRequest);
+        String pacs008Xml = swiftGpiService.buildPacs008MessageFull(fullRequest);
 
-        log.info("Generated pacs.008: {}", pacs008Xml);
+        log.info("Generated pacs.008 message full: {}", pacs008Xml);
 
         return ResponseEntity.ok("Transaction Processed Successfully");
     }

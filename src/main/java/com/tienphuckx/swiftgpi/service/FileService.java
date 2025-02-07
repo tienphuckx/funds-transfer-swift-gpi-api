@@ -15,11 +15,10 @@ public class FileService {
 
     public void saveToFile(String fileName, String content) {
         try {
-            // Tạo thư mục nếu chưa tồn tại
             Files.createDirectories(Paths.get(DIRECTORY));
 
-            // Ghi nội dung vào file
             File file = new File(DIRECTORY + fileName);
+
             try (FileWriter writer = new FileWriter(file)) {
                 writer.write(content);
             }

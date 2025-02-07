@@ -6,7 +6,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-@XmlRootElement(name = "Document")
+//@XmlRootElement(name = "Pacs008MessageDocument")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Pacs008Message {
 

@@ -18,13 +18,13 @@ public class TransactionService {
                 .senderAccount(dto.getSenderAccount())
                 .receiverAccount(dto.getReceiverAccount())
                 .receiverBankBIC(dto.getReceiverBankBIC())
-                .senderBankBIC("BANKXYZ123") // Lấy từ config hoặc DB
+                .senderBankBIC("BANKXYZ123") // May get from config
                 .currency(dto.getCurrency())
                 .amount(dto.getAmount())
                 .reference(dto.getReference())
-                .messageId(UUID.randomUUID().toString()) // Sinh message ID
-                .uetr(UUID.randomUUID().toString()) // Sinh UETR
-                .transactionDate(LocalDateTime.now()) // Set thời gian hiện tại
+                .messageId(UUID.randomUUID().toString()) // Generate message ID
+                .uetr(UUID.randomUUID().toString()) // Generate UETR
+                .transactionDate(LocalDateTime.now())
                 .build();
 
         log.info("Transaction enriched: {}", fullRequest);
