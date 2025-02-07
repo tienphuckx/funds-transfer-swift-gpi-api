@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Document>
+    <FIToFICstmrCdtTrf>
+        <GrpHdr>
+            <MsgId>4fe34f19-f313-4a35-a0e6-44acac8eee88</MsgId>
+            <CreDtTm>2025-02-07T10:29:17.835017789</CreDtTm>
+        </GrpHdr>
+        <CdtTrfTxInf>
+            <PmtId>
+                <InstrId>4fe34f19-f313-4a35-a0e6-44acac8eee88</InstrId>
+                <UETR>20168269-89bc-44cb-93ce-882459158796</UETR>
+            </PmtId>
+            <IntrBkSttlmAmt Ccy="USD">5000.50</IntrBkSttlmAmt>
+            <Dbtr>
+                <Nm>123456789</Nm>
+            </Dbtr>
+            <Cdtr>
+                <Nm>987654321</Nm>
+            </Cdtr>
+        </CdtTrfTxInf>
+    </FIToFICstmrCdtTrf>
+</Document>

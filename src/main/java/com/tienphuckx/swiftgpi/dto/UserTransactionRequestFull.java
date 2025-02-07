@@ -1,12 +1,17 @@
 package com.tienphuckx.swiftgpi.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
+@Builder
 public class UserTransactionRequestFull {
+    @Builder.Default
+    private String transactionId = UUID.randomUUID().toString();
     private String senderAccount;
     private String receiverAccount;
     private String receiverBankBIC;

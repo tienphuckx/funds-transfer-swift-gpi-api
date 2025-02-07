@@ -13,20 +13,23 @@ import java.util.UUID;
 public class TransactionService {
 
     public UserTransactionRequestFull enrichTransaction(UserTransactionRequestDTO dto) {
-        UserTransactionRequestFull fullRequest = new UserTransactionRequestFull();
-        fullRequest.setSenderAccount(dto.getSenderAccount());
-        fullRequest.setReceiverAccount(dto.getReceiverAccount());
-        fullRequest.setReceiverBankBIC(dto.getReceiverBankBIC());
-        fullRequest.setSenderBankBIC("BANKXYZ123"); // Lấy từ config hoặc DB
-        fullRequest.setCurrency(dto.getCurrency());
-        fullRequest.setAmount(dto.getAmount());
-        fullRequest.setReference(dto.getReference());
-        fullRequest.setMessageId(UUID.randomUUID().toString());
-        fullRequest.setUetr(UUID.randomUUID().toString());
-        fullRequest.setTransactionDate(LocalDateTime.now());
+        UserTransactionRequestFull fullRequest = UserTransactionRequestFull.builder()
+                .transactionId(UUID.randomUUID().toString()) // Auto-generate transaction ID
+                .senderAccount(dto.getSenderAccount())
+                .receiverAccount(dto.getReceiverAccount())
+                .receiverBankBIC(dto.getReceiverBankBIC())
+                .senderBankBIC("BANKXYZ123") // Lấy từ config hoặc DB
+                .currency(dto.getCurrency())
+                .amount(dto.getAmount())
+                .reference(dto.getReference())
+                .messageId(UUID.randomUUID().toString()) // Sinh message ID
+                .uetr(UUID.randomUUID().toString()) // Sinh UETR
+                .transactionDate(LocalDateTime.now()) // Set thời gian hiện tại
+                .build();
 
         log.info("Transaction enriched: {}", fullRequest);
         return fullRequest;
     }
+
 }
 
