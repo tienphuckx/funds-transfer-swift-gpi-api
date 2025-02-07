@@ -18,25 +18,48 @@ curl -X POST "http://localhost:8080/transactions/send" \
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Document>
-    <FIToFICstmrCdtTrf>
-        <GrpHdr>
-            <MsgId>b5b68043-14d5-43ef-a5b3-3b8a9374dbd1</MsgId>
-            <CreDtTm>2025-02-07T10:28:46.094332075</CreDtTm>
-        </GrpHdr>
-        <CdtTrfTxInf>
-            <PmtId>
-                <InstrId>b5b68043-14d5-43ef-a5b3-3b8a9374dbd1</InstrId>
-                <UETR>1f9c9939-fed0-415b-9d24-156a793ea6b9</UETR>
-            </PmtId>
-            <IntrBkSttlmAmt Ccy="USD">1000.50</IntrBkSttlmAmt>
-            <Dbtr>
-                <Nm>123456789</Nm>
-            </Dbtr>
-            <Cdtr>
-                <Nm>987654321</Nm>
-            </Cdtr>
-        </CdtTrfTxInf>
-    </FIToFICstmrCdtTrf>
+    <MsgId>c498ba3c-99bd-491e-b879-5e8a3f12825c</MsgId>
+    <CreDtTm>2025-02-07T11:34:23.937232158</CreDtTm>
+    <NbOfTxs>1</NbOfTxs>
+    <CtrlSum>1000.50</CtrlSum>
+    <InstrId>e2b34074-63ce-4439-9faa-c5eca95e6ec8</InstrId>
+    <EndToEndId>NOTPROVIDED</EndToEndId>
+    <TxId>d7f7c57e-51eb-4a5f-bc7a-c3c965e01981</TxId>
+    <IntrBkSttlmAmt Ccy="USD">
+        <Value>1000.50</Value>
+    </IntrBkSttlmAmt>
+    <ChrgBr>SHAR</ChrgBr>
+    <Dbtr>
+        <Nm>Fake Sender Name</Nm>
+        <PstlAdr>
+            <AdrLine>Fake Address Sender</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <Othr>
+                <Id>123456789</Id>
+            </Othr>
+        </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+        <BICFI>BANKXYZ123</BICFI>
+    </DbtrAgt>
+    <CdtrAgt/>
+    <Cdtr>
+        <Nm>Fake Receiver Name</Nm>
+        <PstlAdr>
+            <AdrLine>Fake Address Receiver</AdrLine>
+        </PstlAdr>
+    </Cdtr>
+    <CdtrAcct>
+        <Id>
+            <Othr>
+                <Id>987654321</Id>
+            </Othr>
+        </Id>
+    </CdtrAcct>
+    <RmtInf/>
 </Document>
 ```
 
